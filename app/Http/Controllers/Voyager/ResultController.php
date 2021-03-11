@@ -211,52 +211,26 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
     public function show(Request $request, $id)
     {
         $slug = $this->getSlug($request);
-
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
-        $isSoftDeleted = false;
-
-        if (strlen($dataType->model_name) != 0) {
-            $model = app($dataType->model_name);
-
-            // Use withTrashed() if model uses SoftDeletes and if toggle is selected
-            if ($model && in_array(SoftDeletes::class, class_uses_recursive($model))) {
-                $model = $model->withTrashed();
-            }
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
-                $model = $model->{$dataType->scope}();
-            }
-            $dataTypeContent = call_user_func([$model, 'findOrFail'], $id);
-            if ($dataTypeContent->deleted_at) {
-                $isSoftDeleted = true;
-            }
-        } else {
-            // If Model doest exist, get data from table name
-            $dataTypeContent = DB::table($dataType->name)->where('id', $id)->first();
-        }
-
-        // Replace relationships' keys for labels and create READ links if a slug is provided.
-        $dataTypeContent = $this->resolveRelations($dataTypeContent, $dataType, true);
-
-        // If a column has a relationship associated with it, we do not want to show that field
-        $this->removeRelationshipField($dataType, 'read');
-
-        // Check permission
-        $this->authorize('read', $dataTypeContent);
-
-        // Check if BREAD is Translatable
-        $isModelTranslatable = is_bread_translatable($dataTypeContent);
-
-        // Eagerload Relations
-        $this->eagerLoadRelations($dataTypeContent, $dataType, 'read', $isModelTranslatable);
-
         $view = 'voyager::bread.read';
+        $res = DB::table('resultujians')->where('id',$id)->get();
 
+        foreach($res as $quis){
+            $quisDetails = DB::table('quiss')->where('id', $quis->id_quis)->get();
+            foreach($quisDetails as $result){
+                $countQuises = explode(',', $result->id_questions);
+                $arry = [
+                    'nama_quis'     => $result->quiz_name,
+                    'jumlah_quis'   => count($countQuises)
+                ];
+            }
+        }
+        
         if (view()->exists("voyager::$slug.read")) {
             $view = "voyager::$slug.read";
         }
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable', 'isSoftDeleted'));
+        return Voyager::view($view, $arry);
     }
 
     //***************************************
