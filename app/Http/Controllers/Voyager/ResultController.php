@@ -16,6 +16,7 @@ use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 use App\Qbank;
+use App\Quis;
 
 class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
@@ -164,6 +165,17 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
         if (view()->exists("voyager::$slug.browse")) {
             $view = "voyager::$slug.browse";
         }
+
+        $count = Quis::all();
+
+        foreach($count as $row){
+            // echo "<pre>";
+            $id_qbank = $row->id_questions;
+            $arr_quis = explode(',',$id_qbank);
+            // $jml_quis = count($arr_quis);
+            // print_r($arr_quis);
+            // echo "</pre>";
+        }
         
         return Voyager::view($view, compact(
             'actions',
@@ -179,7 +191,8 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
             'defaultSearchKey',
             'usesSoftDeletes',
             'showSoftDeleted',
-            'showCheckboxColumn'
+            'showCheckboxColumn',
+            'arr_quis'
         ));
     }
 
