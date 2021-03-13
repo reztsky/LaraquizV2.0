@@ -16,7 +16,9 @@
                         <div class="col-md-2">
                             <!-- <div class="jenis-soal alert alert-primary" role="alert"> -->
                                 <!-- @{{jenis_soal}} -->
+                                <a href="{{ url('/tryout') }}">
                                 <img src="#" alt="logo adzkia" class="img-thumbnail">
+                                </a>
                             <!-- </div> -->
                         </div>
                         <div class="col-md-10 text-center">

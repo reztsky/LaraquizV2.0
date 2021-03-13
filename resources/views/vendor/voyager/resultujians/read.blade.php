@@ -12,7 +12,7 @@
                         <div class="col-md-2">
                             <!-- <div class="jenis-soal alert alert-primary" role="alert"> -->
                                 <!-- @{{jenis_soal}} -->
-                                <img src="#" alt="logo adzkia" class="img-thumbnail">
+                                    <img src="#" alt="logo adzkia" class="img-thumbnail">
                             <!-- </div> -->
                         </div>
                         <div class="col-md-10 text-center">
@@ -66,7 +66,7 @@
                                 @if($total_times == null)
                                     @{{asdasd}}
                                 @else
-                                <span id="duration" class="fw-bold text-light">{{ $total_times }}</span>
+                                    <span id="duration" class="fw-bold text-light">{{ $total_times }}</span>
                                 @endif
                             </div>
                         </div>

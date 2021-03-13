@@ -125,7 +125,7 @@ class ResultMuridController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
         $actions = [];
         if (!empty($dataTypeContent->first())) {
             foreach (Voyager::actions() as $action) {
-                $action = new $action($dataType, $dataTypeContent->where('id_user', 3)->first());
+                $action = new $action($dataType, $dataTypeContent->first());
 
                 if ($action->shouldActionDisplayOnDataType()) {
                     $actions[] = $action;
@@ -168,10 +168,6 @@ class ResultMuridController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
             // print_r($arr_quis);
             // echo "</pre>";
         }
-
-        // echo "<pre>";
-        // print_r($dataTypeContent->where('id_user', 8)->first());
-        // echo "</pre>";
         
         return Voyager::view($view, compact(
             'actions',
