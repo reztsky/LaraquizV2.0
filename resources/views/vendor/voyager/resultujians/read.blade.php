@@ -3,6 +3,7 @@
 @section('content')
 <div class="page-content">
         @include('voyager::alerts')
+        <link rel="stylesheet" href="{{url('/css/ujian.css')}}">
         <!-- @include('voyager::dimmers') -->
         <div id="app">
             <div class="row">
@@ -55,29 +56,32 @@
                 </div>
                 <div class="col-md-4">
                     <div class="row header-soal">
-                        <div class="col-md-4 text-center align-center">
+                        <div class="col-md-6 text-center align-center">
                             <div class="waktu alert bg-primary" role="alert">
-                                <span id="duration" class="fw-bold text-light">Sisa Waktu</span>
+                                <span id="duration" class="fw-bold text-light">Waktu Mengerjakan</span>
                             </div>
                         </div>
-                        <div class="col-md-8 text-center">
+                        <div class="col-md-6 text-center">
                             <div class="waktu alert bg-primary" role="alert">
-                                <span id="duration" class="fw-bold text-light">123</span>
+                                @if($total_times == null)
+                                    @{{asdasd}}
+                                @else
+                                <span id="duration" class="fw-bold text-light">{{ $total_times }}</span>
+                                @endif
                             </div>
                         </div>
                     </div>
-                    <ul class="daftar-soal alert-warning p-2 border border-muted rounded-3">
-                        @php $no=1; @endphp
-                        @for(;$no<=$jumlah_quis;)
-                            <li>{{ $no+1 }}</li>
+                    <ol class="daftar-soal p-2 border border-muted rounded-3">
+                        @for($no=1; $no<=$jumlah_quis; $no++)
+                            <span class="alert alert-info" style="margin-left:10px;"><a href="javascipt:void(0)">{{ $no }}</a></span>
                         @endfor
-                    </ul>
+                    </ol>
                     <div class="row">
                         <div class="col-sm-4">
-                            <button class="btn btn-sm btn-success">Soal Sebelumnya</button>
+                            <button class="btn btn-sm btn-success" v-on:click="previousSoal()">Soal Sebelumnya</button>
                         </div>
                         <div class="col-sm-5">
-                            <button class="btn btn-sm btn-success">Soal Selanjutanya</button>
+                            <button class="btn btn-sm btn-success" v-on:click="nextSoal()">Soal Selanjutanya</button>
                         </div>
                         <div class="col-sm-3">
                             <button class="btn btn-sm btn-danger">Selesai</button>
@@ -87,4 +91,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+            method : {
+                nextSoal:function(){
+                    alert('sukses');
+                },
+                previousSoal: function(){
+                    alert('sukses');
+                }
+            },
+        });
+
+    </script>
 @stop

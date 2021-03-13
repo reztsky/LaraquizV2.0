@@ -8,6 +8,7 @@ use App\Http\Controllers\TryoutMuridController;
 use App\Http\Controllers\Voyager\VoyagerController;
 use App\Http\Controllers\PaketMuridController;
 use App\Http\Controllers\ImportQbankController;
+use App\Http\Controllers\Voyager\ResultMuridController;
 
 
 /*
@@ -39,13 +40,13 @@ Route::group(['prefix' => 'tryout'], function () {
     Voyager::routes();
     
     Route::get('tryout-murid',[TryoutMuridController::class,'index']);
-    // Route::get('mulai-ujian/{id}',[TryoutMuridController::class,'mulai_ujian']);
     Route::get('mulai-ujian/{id}',[TryoutMuridController::class,'mulai_ujian']);
     Route::get('beli-quis/{id}',[TryoutMuridController::class,'beli_quis']);
     Route::get('my-tryout',[TryoutMuridController::class,'my_tryout']);
     Route::get('paket-murid',[PaketMuridController::class,'index']);
     Route::get('beli-paket/{id}',[PaketMuridController::class,'beliPaket']);
     Route::get('/paket-murid/detail-paket/{id}',[PaketMuridController::class,'detailPaket']);
+    Route::get('resultujiansMurid',[ResultMuridController::class,'index']);
 });
 
 //Route::post('/admin/options/store', '\Controllers\Voyager\OptionsController@store');

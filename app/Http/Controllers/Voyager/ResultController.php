@@ -224,6 +224,7 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
                     'jumlah_quis'   => count($countQuises)
                 ];
             }
+            $arry['total_times'] = $quis->total_time;
         }
         
         if (view()->exists("voyager::$slug.read")) {
