@@ -130,6 +130,12 @@
                                                             $expl = explode(',' ,$quiss);
                                                         @endphp
                                                         {{ count($expl) }} Soal
+                                                    @elseif($row->getTranslatedAttribute('display_name') == 'users')
+                                                        @foreach($rival as $row)
+                                                            @if($data->id_quis == $row->id_quis)
+                                                                {{ $row->rival }} User
+                                                            @endif
+                                                        @endforeach
                                                     @else
                                                         @include('voyager::formfields.relationship', ['view' => 'browse','options' => $row->details])
                                                     @endif

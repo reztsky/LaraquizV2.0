@@ -31,6 +31,12 @@ class TryoutMuridController extends Controller
     
     public function mulai_ujian($id){
         $quis=Quis::findOrFail($id);
+
+        // $attemp = DB::table('attempUjians')->create([
+        //     'id_user' => Auth::user()->id,
+        //     'id_quis' => $quis->id
+        // ]);
+
         $arrQuest=explode(',',$quis->id_questions);
         $quisName = $quis->quiz_name;
         $quest=$this->loadQuestion($arrQuest[0]);

@@ -86,7 +86,7 @@
                         </div>
                         <div class="col-sm-5">
                             <button class="btn btn-sm btn-success" v-on:click="nextSoal(questions[0].idq)" >Soal Selanjutanya</button>
-                        </div>
+                        </div> 
                         <div class="col-sm-3">
                             <button class="btn btn-sm btn-danger" v-on:click="finishExam('selesai')">Selesai</button>
                         </div>
@@ -237,7 +237,7 @@
                         }
                     });
 
-                    persen=correct/avg*100;
+                    persen=Math.round(correct/avg*100);
                 }else{
                     persen=0
                 }

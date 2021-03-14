@@ -167,15 +167,19 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
         }
 
         $count = Quis::all();
-
+        $id_quis = '';
+        
         foreach($count as $row){
-            // echo "<pre>";
             $id_qbank = $row->id_questions;
             $arr_quis = explode(',',$id_qbank);
-            // $jml_quis = count($arr_quis);
-            // print_r($arr_quis);
-            // echo "</pre>";
+            $id_quis .= $row->id.' ';
         }
+        
+        $quisArry = explode(' ', trim($id_quis));
+        $rival = DB::table('resultujians')
+            ->select(DB::raw('id_quis, count(id_user) as rival'))
+            ->groupBy('id_quis')
+            ->get();
         
         return Voyager::view($view, compact(
             'actions',
@@ -192,7 +196,8 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
             'usesSoftDeletes',
             'showSoftDeleted',
             'showCheckboxColumn',
-            'arr_quis'
+            'arr_quis',
+            'rival'
         ));
     }
 
