@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2021 at 05:02 AM
+-- Generation Time: Mar 14, 2021 at 03:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -168,25 +168,25 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (122, 21, 'updated_at', 'timestamp', 'Updated At', 0, 0, 1, 1, 0, 0, '{}', 7),
 (123, 21, 'transaksipaket_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"id_user\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
 (124, 21, 'transaksipaket_belongsto_group_relationship', 'relationship', 'groups', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Group\",\"table\":\"groups\",\"type\":\"belongsTo\",\"column\":\"id_groups\",\"key\":\"id\",\"label\":\"group_name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3),
-(125, 22, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
-(127, 22, 'id_user', 'text', 'Id User', 0, 1, 1, 0, 0, 0, '{}', 5),
-(128, 22, 'result_status', 'text', 'Result Status', 0, 1, 1, 0, 0, 1, '{}', 6),
-(129, 22, 'start_time', 'text', 'Start Time', 0, 1, 1, 0, 0, 0, '{}', 7),
-(130, 22, 'end_time', 'text', 'End Time', 0, 1, 1, 0, 0, 0, '{}', 8),
-(131, 22, 'categories', 'text', 'Categories', 0, 1, 1, 0, 0, 0, '{}', 9),
-(132, 22, 'individual_time', 'text', 'Individual Time', 0, 1, 1, 0, 0, 0, '{}', 10),
-(133, 22, 'total_time', 'text', 'Total Time', 0, 1, 1, 0, 0, 0, '{}', 11),
-(134, 22, 'score_obtained', 'text', 'Score Obtained', 0, 1, 1, 0, 0, 0, '{}', 12),
-(135, 22, 'percentage_obtained', 'text', 'Percentage Obtained', 0, 1, 1, 0, 0, 0, '{}', 13),
-(136, 22, 'attempted_ip', 'text', 'Attempted Ip', 0, 1, 1, 0, 0, 0, '{}', 14),
-(137, 22, 'score_individual', 'text', 'Score Individual', 0, 1, 1, 0, 0, 0, '{}', 15),
-(138, 22, 'photo', 'text', 'Photo', 0, 1, 1, 0, 0, 0, '{}', 16),
-(139, 22, 'manual_valuation', 'text', 'Manual Valuation', 0, 1, 1, 0, 0, 0, '{}', 17),
-(140, 22, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 18),
-(141, 22, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 19),
-(142, 22, 'resultujian_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"id_user\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
-(143, 22, 'resultujian_belongsto_quiss_relationship', 'relationship', 'quiss', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Quis\",\"table\":\"quiss\",\"type\":\"belongsTo\",\"column\":\"id_quis\",\"key\":\"id\",\"label\":\"quiz_name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3),
-(144, 22, 'id_quis', 'text', 'Id Quis', 0, 1, 1, 1, 1, 1, '{}', 4),
+(125, 22, 'id', 'text', 'ID TryOut', 1, 1, 1, 0, 0, 0, '{}', 1),
+(127, 22, 'id_user', 'text', 'Id User', 0, 1, 1, 1, 1, 1, '{}', 12),
+(128, 22, 'result_status', 'text', 'Result Status', 0, 1, 1, 0, 0, 1, '{}', 13),
+(129, 22, 'start_time', 'text', 'Start Time', 0, 1, 1, 0, 0, 0, '{}', 14),
+(130, 22, 'end_time', 'text', 'End Time', 0, 1, 1, 0, 0, 0, '{}', 15),
+(131, 22, 'categories', 'text', 'Categories', 0, 1, 1, 0, 0, 0, '{}', 3),
+(132, 22, 'individual_time', 'text', 'Individual Time', 0, 1, 1, 0, 0, 0, '{}', 16),
+(133, 22, 'total_time', 'text', 'Total Time', 0, 1, 1, 0, 0, 0, '{}', 17),
+(134, 22, 'score_obtained', 'text', 'Score Obtained', 0, 1, 1, 0, 0, 0, '{}', 18),
+(135, 22, 'percentage_obtained', 'text', 'Percentage Obtained', 0, 1, 1, 0, 0, 0, '{}', 6),
+(136, 22, 'attempted_ip', 'text', 'Attempted Ip', 0, 1, 1, 0, 0, 0, '{}', 19),
+(137, 22, 'score_individual', 'text', 'Score Individual', 0, 1, 1, 0, 0, 0, '{}', 20),
+(138, 22, 'photo', 'text', 'Photo', 0, 1, 1, 0, 0, 0, '{}', 21),
+(139, 22, 'manual_valuation', 'text', 'Manual Valuation', 0, 1, 1, 0, 0, 0, '{}', 22),
+(140, 22, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 25),
+(141, 22, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 26),
+(142, 22, 'resultujian_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"TCG\\\\Voyager\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"id_user\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 7),
+(143, 22, 'resultujian_belongsto_quiss_relationship', 'relationship', 'Nama TryOut', 0, 1, 1, 0, 0, 0, '{\"model\":\"App\\\\Quis\",\"table\":\"quiss\",\"type\":\"belongsTo\",\"column\":\"id_quis\",\"key\":\"id\",\"label\":\"quiz_name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 4),
+(144, 22, 'id_quis', 'text', 'Id Quis', 0, 1, 1, 1, 1, 1, '{}', 11),
 (145, 21, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 0, 0, '{}', 6),
 (146, 24, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1),
 (147, 24, 'question_type', 'select_dropdown', 'Question Type', 0, 1, 1, 1, 1, 1, '{\"default\":\"question_type\",\"options\":{\"1\":\"Multiple Choice Single Answer\",\"2\":\"Multiple Choice Multiple Answer\"}}', 3),
@@ -201,7 +201,14 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (156, 24, 'id_category', 'text', 'Id Category', 0, 0, 0, 0, 0, 0, '{}', 13),
 (157, 24, 'qbank_belongsto_category_relationship', 'relationship', 'categorys', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Category\",\"table\":\"categorys\",\"type\":\"belongsTo\",\"column\":\"id_category\",\"key\":\"id\",\"label\":\"category_name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
 (158, 24, 'qbank_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"scope\":\"SomeUser\",\"model\":\"\\\\TCG\\\\Voyager\\\\Models\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"inserted_by\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
-(159, 20, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 0, 0, '{}', 8);
+(159, 20, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 0, 0, '{}', 8),
+(160, 22, 'resultujian_belongsto_level_relationship', 'relationship', 'level', 0, 1, 1, 1, 1, 0, '{\"model\":\"App\\\\Level\",\"table\":\"levels\",\"type\":\"belongsTo\",\"column\":\"id_level\",\"key\":\"id\",\"label\":\"level_name\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 2),
+(161, 22, 'id_level', 'text', 'Id Level', 0, 1, 1, 1, 1, 1, '{}', 23),
+(162, 22, 'resultujian_belongsto_quiss_relationship_1', 'relationship', 'Soal', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Quis\",\"table\":\"quiss\",\"type\":\"belongsTo\",\"column\":\"id_quis\",\"key\":\"id\",\"label\":\"id_questions\",\"pivot_table\":\"categorys\",\"pivot\":\"0\",\"taggable\":\"0\"}', 5),
+(165, 22, 'nilai_terrendah', 'text', 'Nilai Terrendah', 0, 1, 1, 0, 0, 0, '{}', 10),
+(166, 22, 'rangking', 'text', 'Rangking', 0, 1, 1, 1, 1, 1, '{}', 24),
+(167, 22, 'nilai_tertinggi', 'text', 'Nilai Tertinggi', 0, 1, 1, 1, 1, 1, '{}', 9),
+(168, 22, 'volume', 'text', 'Volume', 0, 1, 1, 0, 0, 0, '{}', 8);
 
 -- --------------------------------------------------------
 
@@ -244,7 +251,7 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (17, 'results', 'results', 'Result', 'Results', NULL, 'App\\Result', NULL, '\\App\\Http\\Controllers\\Voyager\\ResultController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null}', '2021-01-26 04:43:48', '2021-01-26 04:43:48'),
 (20, 'transaksi_quiz', 'transaksi-quiz', 'Transaksi Quiz', 'Transaksi Quizzes', NULL, 'App\\TransaksiQuiz', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-01-27 18:08:01', '2021-02-15 22:01:21'),
 (21, 'transaksipakets', 'transaksipakets', 'Transaksipaket', 'Transaksipakets', NULL, 'App\\Transaksipaket', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-02-02 18:17:38', '2021-02-15 22:00:46'),
-(22, 'resultujians', 'resultujians', 'Resultujian', 'Resultujians', NULL, 'App\\Resultujian', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-02-03 00:36:18', '2021-02-03 00:41:47'),
+(22, 'resultujians', 'resultujians', 'Resultujian', 'Resultujians', NULL, 'App\\Resultujian', NULL, '\\App\\Http\\Controllers\\Voyager\\ResultController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-02-03 00:36:18', '2021-03-14 07:31:27'),
 (24, 'qbanks', 'qbanks', 'Qbank', 'Qbanks', NULL, 'App\\Qbank', NULL, '\\App\\Http\\Controllers\\Voyager\\QbanksController', NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-02-11 06:29:07', '2021-02-11 08:02:24');
 
 -- --------------------------------------------------------
@@ -309,36 +316,16 @@ CREATE TABLE `jawbanmurids` (
 --
 
 INSERT INTO `jawbanmurids` (`id`, `id_user`, `id_quis`, `id_qbanks`, `jawaban`, `created_at`, `updated_at`) VALUES
-(1, 3, 10, 22, '42', '2021-02-01 05:18:20', '2021-02-01 05:18:20'),
-(2, 3, 10, 22, '42', '2021-02-03 00:39:13', '2021-02-03 00:39:13'),
-(3, 8, 10, 22, '42', '2021-02-08 06:53:39', '2021-02-08 06:53:39'),
-(4, 8, 10, 22, '44', '2021-02-08 06:53:40', '2021-02-08 06:53:40'),
-(5, 3, 11, 22, '44', '2021-02-16 00:39:11', '2021-02-16 00:39:11'),
-(6, 8, 10, 22, '42', '2021-02-18 22:50:22', '2021-02-18 22:50:22'),
-(7, 8, 10, 22, '43', '2021-02-18 22:50:25', '2021-02-18 22:50:25'),
-(8, 8, 10, 22, '44', '2021-02-18 22:50:26', '2021-02-18 22:50:26'),
-(9, 8, 10, 22, '45', '2021-02-18 22:50:27', '2021-02-18 22:50:27'),
-(10, 8, 10, 22, '42', '2021-02-18 22:50:27', '2021-02-18 22:50:27'),
-(11, 8, 10, 22, '43', '2021-02-18 22:50:28', '2021-02-18 22:50:28'),
-(12, 8, 10, 23, '54', '2021-02-18 22:50:35', '2021-02-18 22:50:35'),
-(13, 8, 10, 23, '54', '2021-02-18 22:50:41', '2021-02-18 22:50:41'),
-(14, 8, 10, 23, '54', '2021-02-18 22:50:42', '2021-02-18 22:50:42'),
-(15, 8, 10, 23, '54', '2021-02-18 22:50:43', '2021-02-18 22:50:43'),
-(16, 8, 10, 23, '54', '2021-02-18 22:50:43', '2021-02-18 22:50:43'),
-(17, 8, 10, 23, '54', '2021-02-18 22:50:43', '2021-02-18 22:50:43'),
-(18, 8, 10, 23, '54', '2021-02-18 22:50:44', '2021-02-18 22:50:44'),
-(19, 8, 10, 23, '54', '2021-02-18 22:50:44', '2021-02-18 22:50:44'),
-(20, 8, 10, 23, '54', '2021-02-18 22:50:47', '2021-02-18 22:50:47'),
-(21, 8, 10, 22, '42', '2021-02-18 22:50:53', '2021-02-18 22:50:53'),
-(22, 8, 10, 22, '43', '2021-02-18 22:50:55', '2021-02-18 22:50:55'),
-(23, 8, 10, 22, '44', '2021-02-18 22:50:56', '2021-02-18 22:50:56'),
-(24, 8, 10, 22, '45', '2021-02-18 22:50:56', '2021-02-18 22:50:56'),
-(25, 8, 10, 22, '43', '2021-02-18 22:50:57', '2021-02-18 22:50:57'),
-(26, 8, 10, 23, '58', '2021-02-18 23:47:18', '2021-02-18 23:47:18'),
-(27, 8, 10, 23, '59', '2021-02-18 23:47:19', '2021-02-18 23:47:19'),
-(28, 8, 10, 23, '58', '2021-02-18 23:47:19', '2021-02-18 23:47:19'),
-(29, 8, 10, 22, '44', '2021-02-18 23:47:55', '2021-02-18 23:47:55'),
-(30, 8, 10, 23, '59', '2021-02-18 23:47:58', '2021-02-18 23:47:58');
+(89, 8, 10, 22, '42', '2021-03-02 07:13:09', '2021-03-02 07:13:09'),
+(90, 8, 10, 22, '42', '2021-03-02 07:14:38', '2021-03-02 07:14:38'),
+(91, 8, 10, 22, '43', '2021-03-02 07:45:11', '2021-03-02 07:45:11'),
+(92, 8, 10, 22, '42', '2021-03-02 07:48:46', '2021-03-02 07:48:46'),
+(93, 8, 10, 22, '42', '2021-03-02 07:52:31', '2021-03-02 07:52:31'),
+(94, 3, 10, 22, '44', '2021-03-12 23:56:03', '2021-03-12 23:56:03'),
+(95, 3, 10, 23, '94', '2021-03-12 23:56:26', '2021-03-12 23:56:26'),
+(96, 8, 10, 22, '42', '2021-03-14 03:26:20', '2021-03-14 03:26:20'),
+(97, 8, 10, 23, '94', '2021-03-14 03:26:24', '2021-03-14 03:26:24'),
+(98, 8, 10, 24, '96', '2021-03-14 03:26:28', '2021-03-14 03:26:28');
 
 -- --------------------------------------------------------
 
@@ -432,8 +419,8 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (26, 4, 'My Tryout', '/tryout/my-tryout', '_self', NULL, '#000000', NULL, 4, '2021-01-27 19:10:15', '2021-01-27 19:13:14', NULL, ''),
 (28, 4, 'Daftar Group', '/tryout/paket-murid', '_self', NULL, '#000000', NULL, 2, '2021-01-27 19:13:10', '2021-02-02 18:20:02', NULL, ''),
 (29, 1, 'Transaksipakets', '', '_self', NULL, NULL, NULL, 16, '2021-02-02 18:17:39', '2021-02-11 06:30:47', 'voyager.transaksipakets.index', NULL),
-(30, 1, 'Resultujians', '', '_self', NULL, NULL, NULL, 17, '2021-02-03 00:36:18', '2021-02-11 06:30:47', 'voyager.resultujians.index', NULL),
-(31, 4, 'Result Ujian', '', '_self', NULL, '#000000', NULL, 20, '2021-02-03 00:37:13', '2021-02-03 00:37:13', 'voyager.resultujians.index', NULL),
+(30, 1, 'Resultujians', '', '_self', NULL, '#000000', NULL, 17, '2021-02-03 00:36:18', '2021-03-12 09:49:39', 'voyager.resultujians.index', 'null'),
+(31, 4, 'Result Ujian', '/tryout/resultujiansMurid', '_self', NULL, '#000000', NULL, 5, '2021-02-03 00:37:13', '2021-03-12 09:50:50', NULL, ''),
 (33, 1, 'Question Banks', '', '_self', 'voyager-edit', '#000000', NULL, 4, '2021-02-11 06:29:07', '2021-02-11 06:37:59', 'voyager.qbanks.index', 'null');
 
 -- --------------------------------------------------------
@@ -610,10 +597,14 @@ INSERT INTO `options` (`id`, `idq`, `answer`, `score`, `created_at`, `updated_at
 (43, 22, '<p>3</p>', 0, '2021-01-21 05:51:59', '2021-01-25 04:44:36', '0'),
 (44, 22, '<p>2</p>', 0, '2021-01-21 05:51:59', '2021-01-25 04:44:36', '0'),
 (45, 22, '<p>1</p>', 1, '2021-01-21 05:51:00', '2021-01-25 04:44:36', '0'),
-(58, 23, 'coba jawab 1', 1, '2021-02-19 06:39:14', NULL, NULL),
-(59, 23, 'coba jawab salah', 0, '2021-02-19 06:39:14', NULL, NULL),
-(60, 24, 'coba jawab 2', 6, '2021-02-19 06:39:14', NULL, NULL),
-(61, 24, 'coba jawab salah 2', 0, '2021-02-19 06:39:14', NULL, NULL);
+(94, 23, '<p>coba jawab 1</p>', 1, '2021-03-02 13:01:38', NULL, NULL),
+(95, 23, '<p>coba jawab salah</p>', 0, '2021-03-02 13:01:38', NULL, NULL),
+(96, 24, '<p>coba jawab 2</p>', 6, '2021-03-02 13:01:38', NULL, NULL),
+(97, 24, '<p>coba jawab salah 2</p>', 0, '2021-03-02 13:01:38', NULL, NULL),
+(98, 25, '<p>coba jawab 1</p>', 1, '2021-03-03 08:35:12', NULL, NULL),
+(99, 25, '<p>coba jawab salah</p>', 0, '2021-03-03 08:35:12', NULL, NULL),
+(100, 26, '<p>coba jawab 2</p>', 6, '2021-03-03 08:35:12', NULL, NULL),
+(101, 26, '<p>coba jawab salah 2</p>', 0, '2021-03-03 08:35:12', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -880,8 +871,10 @@ CREATE TABLE `qbanks` (
 
 INSERT INTO `qbanks` (`id`, `question_type`, `question`, `inserted_by`, `paragraph`, `created_at`, `updated_at`, `time_served`, `time_correct`, `time_incorrected`, `id_category`) VALUES
 (22, '1', '<p>Berapa Hasil Dari Perhitungan berikut&nbsp;<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac bevelled=\"true\"><mn>10</mn><mn>5</mn></mfrac></math></p>', 1, '<p>coba</p>', '2021-01-21 05:51:00', '2021-01-25 04:26:11', NULL, NULL, NULL, 1),
-(23, NULL, 'Pertanyaan 1', 8, 'Paragraph Text', '2021-02-19 06:39:14', NULL, NULL, NULL, NULL, NULL),
-(24, NULL, 'Pertanyaan 2', 8, 'Paragraph Text 2', '2021-02-19 06:39:14', NULL, NULL, NULL, NULL, NULL);
+(23, '1', '<p>Pertanyaan 1</p>', 8, '', '2021-03-02 13:01:38', NULL, NULL, NULL, NULL, 2),
+(24, '1', '<p>Pertanyaan 2</p>', 8, '<p>Paragraph 2</p>', '2021-03-02 13:01:38', NULL, NULL, NULL, NULL, 2),
+(25, '1', '<p>Pertanyaan nya</p>', 8, '<p>Paragraph nya</p>', '2021-03-03 08:35:12', NULL, NULL, NULL, NULL, 2),
+(26, '1', '<p>Pertanyaan nya 2</p>', 8, '<p>Paragraph nya 2</p>', '2021-03-03 08:35:12', NULL, NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -913,8 +906,8 @@ CREATE TABLE `quiss` (
 --
 
 INSERT INTO `quiss` (`id`, `quiz_name`, `gambar`, `slug`, `description`, `start_date`, `end_date`, `id_groups`, `id_questions`, `duration`, `pass_percentage`, `with_login`, `inserted_by`, `quiz_price`, `created_at`, `updated_at`) VALUES
-(10, 'Coba2', 'quiss\\January2021\\7F8s6a1xXTEz3yL0filx.jpg', 'paket-simak-ui-1', 'coba', '2021-01-26 08:06:00', '2021-01-26 08:06:00', 1, '22', 90, 75, 1, 1, 0, '2021-01-25 18:07:05', '2021-01-25 18:07:05'),
-(11, 'Tryout SIMAK UI', 'quiss\\January2021\\tEdRBkDR1NarhiahtLfF.jpg', 'Tryout-SIMAK-UI', 'Tryout SIMAK UI', '2021-01-27 20:02:00', '2021-01-27 20:02:00', 1, '22', 90, 75, 1, 1, 5000, '2021-01-27 06:02:55', '2021-01-27 06:02:55');
+(10, 'Coba2', 'quiss\\January2021\\7F8s6a1xXTEz3yL0filx.jpg', 'paket-simak-ui-1', 'coba', '2021-01-26 08:06:00', '2021-01-26 08:06:00', 1, '22,23,24', 90, 75, 1, 8, 0, '2021-01-25 18:07:00', '2021-02-28 21:29:32'),
+(11, 'Tryout SIMAK UI', 'quiss\\January2021\\tEdRBkDR1NarhiahtLfF.jpg', 'Tryout-SIMAK-UI', 'Tryout SIMAK UI', '2021-01-27 20:02:00', '2021-01-27 20:02:00', 1, '22', 90, 75, 1, 8, 5000, '2021-01-27 06:02:00', '2021-02-28 21:28:54');
 
 -- --------------------------------------------------------
 
@@ -939,16 +932,26 @@ CREATE TABLE `resultujians` (
   `photo` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `manual_valuation` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `id_level` int(11) DEFAULT NULL,
+  `nilai_tertinggi` int(11) DEFAULT NULL,
+  `nilai_terrendah` int(11) DEFAULT NULL,
+  `rangking` int(11) DEFAULT NULL,
+  `volume` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `resultujians`
 --
 
-INSERT INTO `resultujians` (`id`, `id_quis`, `id_user`, `result_status`, `start_time`, `end_time`, `categories`, `individual_time`, `total_time`, `score_obtained`, `percentage_obtained`, `attempted_ip`, `score_individual`, `photo`, `manual_valuation`, `created_at`, `updated_at`) VALUES
-(1, 10, 3, 'PASS', '2021-02-03 14:40:01', NULL, NULL, NULL, NULL, 1, 100, NULL, NULL, NULL, NULL, '2021-02-03 00:40:03', '2021-02-03 00:40:03'),
-(2, 10, 8, 'FAIL', '2021-02-19 13:47:58', NULL, NULL, NULL, NULL, 0, 50, NULL, NULL, NULL, NULL, '2021-02-18 23:48:00', '2021-02-18 23:48:00');
+INSERT INTO `resultujians` (`id`, `id_quis`, `id_user`, `result_status`, `start_time`, `end_time`, `categories`, `individual_time`, `total_time`, `score_obtained`, `percentage_obtained`, `attempted_ip`, `score_individual`, `photo`, `manual_valuation`, `created_at`, `updated_at`, `id_level`, `nilai_tertinggi`, `nilai_terrendah`, `rangking`, `volume`) VALUES
+(1, 10, 3, 'PASS', '2021-02-03 14:40:01', NULL, NULL, NULL, '2', 1, 100, NULL, NULL, NULL, NULL, '2021-02-03 00:40:03', '2021-02-03 00:40:03', NULL, NULL, NULL, NULL, NULL),
+(2, 10, 8, 'FAIL', '2021-02-19 13:47:58', NULL, NULL, NULL, NULL, 0, 50, NULL, NULL, NULL, NULL, '2021-02-18 23:48:00', '2021-02-18 23:48:00', NULL, NULL, NULL, NULL, NULL),
+(3, 10, 8, 'FAIL', '2021-02-28 20:56:10', NULL, NULL, NULL, NULL, 1, 0, NULL, NULL, NULL, NULL, '2021-02-28 06:56:11', '2021-02-28 06:56:11', NULL, NULL, NULL, NULL, NULL),
+(4, 11, 8, 'FAIL', '2021-03-01 14:37:34', NULL, NULL, NULL, NULL, 7, 67, NULL, NULL, NULL, NULL, '2021-03-01 00:37:00', '2021-03-10 19:24:55', 1, NULL, NULL, NULL, NULL),
+(5, 10, 8, 'FAIL', '2021-03-01 14:42:38', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, '2021-03-01 00:42:39', '2021-03-01 00:42:39', NULL, NULL, NULL, NULL, NULL),
+(6, 10, 3, 'FAIL', '2021-03-01 14:43:38', NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, '2021-03-01 00:43:39', '2021-03-01 00:43:39', NULL, NULL, NULL, NULL, NULL),
+(7, 10, 8, 'PASS', '2021-03-14 17:26:33', NULL, NULL, NULL, NULL, 8, 100, NULL, NULL, NULL, NULL, '2021-03-14 03:26:35', '2021-03-14 03:26:35', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1331,7 +1334,7 @@ ALTER TABLE `categorys`
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `data_types`
@@ -1355,7 +1358,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `jawbanmurids`
 --
 ALTER TABLE `jawbanmurids`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `levels`
@@ -1397,7 +1400,7 @@ ALTER TABLE `oauth_personal_access_clients`
 -- AUTO_INCREMENT for table `options`
 --
 ALTER TABLE `options`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -1415,7 +1418,7 @@ ALTER TABLE `quiss`
 -- AUTO_INCREMENT for table `resultujians`
 --
 ALTER TABLE `resultujians`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`

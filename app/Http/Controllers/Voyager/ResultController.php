@@ -177,9 +177,18 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
         
         $quisArry = explode(' ', trim($id_quis));
         $customRaw = DB::table('resultujians')
-            ->select(DB::raw('id_quis, count(id_user) as rival, max(percentage_obtained) as nilai_max, min(percentage_obtained) as nilai_min'))
+            ->select(DB::raw('id_quis, count(id_quis) as volume, count(id_user) as rival, max(percentage_obtained) as nilai_max, min(percentage_obtained) as nilai_min'))
             ->groupBy('id_quis')
             ->get();
+
+        $count_tryout = DB::table('resultujians')
+        ->select(DB::raw('id_quis, count(id_quis)'))
+        ->groupBy('id_quis')
+        ->get();
+
+        // echo "<pre>";
+        // print_r($count_tryout);
+        // echo "</pre>";
         
         return Voyager::view($view, compact(
             'actions',

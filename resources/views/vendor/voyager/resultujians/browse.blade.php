@@ -204,6 +204,12 @@
                                                                 {{$row->nilai_min}}
                                                             @endif
                                                         @endforeach
+                                                    @elseif($row->getTranslatedAttribute('display_name') == 'Volume')
+                                                        @foreach($customRaw as $row)
+                                                            @if($data->id_quis == $row->id_quis)
+                                                                {{$row->volume}}x
+                                                            @endif
+                                                        @endforeach
                                                     @else
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
                                                         <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
