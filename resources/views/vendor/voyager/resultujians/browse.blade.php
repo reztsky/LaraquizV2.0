@@ -131,7 +131,7 @@
                                                         @endphp
                                                         {{ count($expl) }} Soal
                                                     @elseif($row->getTranslatedAttribute('display_name') == 'users')
-                                                        @foreach($rival as $row)
+                                                        @foreach($customRaw as $row)
                                                             @if($data->id_quis == $row->id_quis)
                                                                 {{ $row->rival }} User
                                                             @endif
@@ -192,8 +192,22 @@
                                                 @elseif($row->type == 'color')
                                                     <span class="badge badge-lg" style="background-color: {{ $data->{$row->field} }}">{{ $data->{$row->field} }}</span>
                                                 @elseif($row->type == 'text')
-                                                    @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
+                                                    @if($row->getTranslatedAttribute('display_name') == 'Nilai Tertinggi')
+                                                        @foreach($customRaw as $row)
+                                                            @if($data->id_quis == $row->id_quis)
+                                                                {{$row->nilai_max}}
+                                                            @endif
+                                                        @endforeach
+                                                    @elseif($row->getTranslatedAttribute('display_name') == 'Nilai Terrendah')
+                                                        @foreach($customRaw as $row)
+                                                            @if($data->id_quis == $row->id_quis)
+                                                                {{$row->nilai_min}}
+                                                            @endif
+                                                        @endforeach
+                                                    @else
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
+                                                    @endif
                                                 @elseif($row->type == 'text_area')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div>{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>

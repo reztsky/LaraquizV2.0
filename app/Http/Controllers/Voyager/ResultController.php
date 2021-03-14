@@ -176,8 +176,8 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
         }
         
         $quisArry = explode(' ', trim($id_quis));
-        $rival = DB::table('resultujians')
-            ->select(DB::raw('id_quis, count(id_user) as rival'))
+        $customRaw = DB::table('resultujians')
+            ->select(DB::raw('id_quis, count(id_user) as rival, max(percentage_obtained) as nilai_max, min(percentage_obtained) as nilai_min'))
             ->groupBy('id_quis')
             ->get();
         
@@ -197,7 +197,7 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
             'showSoftDeleted',
             'showCheckboxColumn',
             'arr_quis',
-            'rival'
+            'customRaw'
         ));
     }
 
