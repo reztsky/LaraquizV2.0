@@ -22,8 +22,8 @@
                             <a href="#" class="inline-block px-0 px-4 py-2 mx-2 font-medium text-left md:px-0 hover:text-indigo-800 md:hover:text-white lg:mx-3 md:text-center">Contact</a>
                         </div>
                         <div class="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
-                            <a href="{{url(/tryout)}}" class="w-full pl-6 mr-0 text-indigo-200 hover:text-white md:pl-0 md:mr-3 lg:mr-5 md:w-auto">Sign In</a>
-                            <a href="{{url(/register)}}" class="inline-flex items-center justify-center px-4 py-2 mr-1 text-base font-medium leading-6 text-indigo-600 whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-100 border border-transparent rounded-full hover:bg-white focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Sign Up</a>
+                            <a href="{{url("/tryout")}}" class="w-full pl-6 mr-0 text-indigo-200 hover:text-white md:pl-0 md:mr-3 lg:mr-5 md:w-auto">Sign In</a>
+                            <a href="{{url("/register")}}" class="inline-flex items-center justify-center px-4 py-2 mr-1 text-base font-medium leading-6 text-indigo-600 whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-100 border border-transparent rounded-full hover:bg-white focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Sign Up</a>
                         </div>
                     </div>
                 </div>
@@ -282,7 +282,7 @@
 
                 <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
                     <h4 class="w-full text-3xl font-bold">Signup</h4>
-                    <p class="text-lg text-gray-500">or, if you have an account you can <a href="{{url(/tryout)}}" class="text-blue-600 underline">sign in</a></p>
+                    <p class="text-lg text-gray-500">or, if you have an account you can <a href="{{url("/tryout")}}" class="text-blue-600 underline">sign in</a></p>
                     <div class="relative w-full mt-10 space-y-8">
                         <div class="relative">
                             <label class="font-medium text-gray-900">Name</label>
