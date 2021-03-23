@@ -23,7 +23,7 @@
                         </div>
                         <div class="flex flex-col items-center justify-end w-full h-full pt-4 md:w-1/3 md:flex-row md:py-0">
                             <a href="{{url("/tryout")}}" class="w-full pl-6 mr-0 text-indigo-200 hover:text-white md:pl-0 md:mr-3 lg:mr-5 md:w-auto">Sign In</a>
-                            <a href="{{url("/register")}}" class="inline-flex items-center justify-center px-4 py-2 mr-1 text-base font-medium leading-6 text-indigo-600 whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-100 border border-transparent rounded-full hover:bg-white focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Sign Up</a>
+                            <a href="#form_daftar" class="inline-flex items-center justify-center px-4 py-2 mr-1 text-base font-medium leading-6 text-indigo-600 whitespace-no-wrap transition duration-150 ease-in-out bg-indigo-100 border border-transparent rounded-full hover:bg-white focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">Sign Up</a>
                         </div>
                     </div>
                 </div>
@@ -278,7 +278,7 @@
                 </div>
             </div>
 
-            <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
+            <div class="w-full bg-white lg:w-6/12 xl:w-5/12" id="form_daftar">
 
                 <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
                     <h4 class="w-full text-3xl font-bold">Signup</h4>
