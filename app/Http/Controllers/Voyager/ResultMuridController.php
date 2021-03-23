@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Voyager;
 use Exception;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
-// use Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Database\Schema\SchemaManager;
@@ -184,7 +183,8 @@ class ResultMuridController extends \TCG\Voyager\Http\Controllers\VoyagerBaseCon
             'usesSoftDeletes',
             'showSoftDeleted',
             'showCheckboxColumn',
-            'slug'
+            'slug',
+            'arr_quis'
         ));
     }
 }

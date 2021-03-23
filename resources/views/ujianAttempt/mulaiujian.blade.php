@@ -23,7 +23,7 @@
                         </div>
                         <div class="col-md-10 text-center">
                             <div class="waktu alert alert-warning" role="alert">
-                                <span class="badge bg-primary">@{{posisi_soal}}</span>
+                                <span class="badge bg-primary">@{{posisi_soal+1}}</span>
                                 <span class="badge bg-info">{{ $countQuis }}</span>
                                 <span class="badge bg-info text-light">{{ $quisName }}</span>
                             </div>
@@ -82,10 +82,10 @@
                     </ul>
                     <div class="row">
                         <div class="col-sm-4">
-                            <button class="btn btn-sm btn-success"  v-on:click="previousSoal(questions[0].idq)" >Soal Sebelumnya</button>
+                            <button class="btn btn-sm btn-success"  v-on:click="previousSoal(posisi_soal)" >Soal Sebelumnya</button>
                         </div>
                         <div class="col-sm-5">
-                            <button class="btn btn-sm btn-success" v-on:click="nextSoal(questions[0].idq)" >Soal Selanjutanya</button>
+                            <button :class="{'disabled' : disabled_next}" class="btn btn-sm btn-success" v-on:click="nextSoal(posisi_soal)" >Soal Selanjutanya</button>
                         </div> 
                         <div class="col-sm-3">
                             <button class="btn btn-sm btn-danger" v-on:click="finishExam('selesai')">Selesai</button>
@@ -106,15 +106,17 @@
        new Vue({
         el: '#app',
         data :{
+            list_questions:{!!json_encode($arrQuest)!!},
             questions:[],
             jenis_soal:'',
-            posisi_soal:1,
+            posisi_soal:0,
             jumlah_soal:"{{ $countQuis }}",
             status_jawab: [],
             options:[],
             selected:undefined,
             countdown:'',
-            resultUjian:[]
+            resultUjian:[],
+            disabled_next:false
         },
         watch : {
             
@@ -128,36 +130,43 @@
                     }
                 }
             },
-            previousSoal:function(idq){
-                this.getQuestion(idq-1);
+            previousSoal:function(posisi_soal){
+                var idq=this.list_questions[posisi_soal-1];
+                this.getQuestion(idq);
                 if(this.options.length>0){
                     index=this.options.findIndex((obj=>obj.id_qbanks==idq-1));
                     if(index!=-1){
                         this.selected=this.options[index].id_option;
                     }
                 }
-                if(this.posisi_soal != 1){
-                    this.posisi_soal-=1;
+                if(this.posisi_soal != 0){
+                    this.posisi_soal -= 1;
                 }
             },
-            nextSoal:function(idq){
-                this.getQuestion(idq+1);
+            nextSoal:function(posisi_soal){
+                var idq=this.list_questions[posisi_soal+1];
+                console.log(idq);
+                this.getQuestion(idq);
                 if(this.options.length>0){
                     index=this.options.findIndex((obj=>obj.id_qbanks==idq+1));
                     if(index!=-1){
                         this.selected=this.options[index].id_option;
                     }
                 }
-                if(this.posisi_soal < this.jumlah_soal){
+                if(this.posisi_soal < this.jumlah_soal ){   
+                    // this.disabled_next=true;
                     this.posisi_soal += 1;
-                }
+                    console.log(this.posisi_soal);
+                }   
+                
+                // /console.log(this.posisi_soal+' '+this.jumlah_soal);
             },
             saveJawaban : function(idq,id_option,score,correct,e){ 
                 this.selected=id_option;
                 this.status_jawab.push({
                     no_soal: this.posisi_soal,
                 });
-                console.log(this.status_jawab);
+                // console.log(this.status_jawab);
                 var url="{{url('/api/question')}}";
                 axios
                     .post(url,
@@ -316,7 +325,8 @@
             this.TimeCountdown();
             this.getQuestion({{$arrQuest[0]}});
             var duration={!! $quis->duration !!};
-            // console.log(duration);
+            // console.log(duration);            
+            console.log(this.list_questions);
         }
         })
     </script>
