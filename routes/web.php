@@ -33,8 +33,11 @@ Route::post('registrasiUser',[RegisterController::class,'registrasiUser']);
 Route::post('uploadQbank',[ImportQbankController::class,'store']);
 Route::post('createTemplate',[ImportQbankController::class,'store']);
 
+
+
 Route::get('approve-paket/{id}',[PaketMuridController::class,'contactAdmin']);
 Route::get('template-download',[ImportQbankController::class,'download']);
+Route::post('importSoal',[ImportQbankController::class,'saveSoal']);
 
 Route::group(['prefix' => 'tryout'], function () {
     Voyager::routes();
@@ -47,6 +50,7 @@ Route::group(['prefix' => 'tryout'], function () {
     Route::get('beli-paket/{id}',[PaketMuridController::class,'beliPaket']);
     Route::get('/paket-murid/detail-paket/{id}',[PaketMuridController::class,'detailPaket']);
     Route::get('resultujiansMurid',[ResultMuridController::class,'index']);
+    
 });
 
 //Route::post('/admin/options/store', '\Controllers\Voyager\OptionsController@store');

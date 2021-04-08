@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Option;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
@@ -15,8 +16,10 @@ use App\Qbank;
 
 class ImportQbankController extends Controller
 {
+    
     public function __construct(){
         $this->phpWord = new PhpWord();
+       
     }
 
     /**
@@ -50,7 +53,7 @@ class ImportQbankController extends Controller
         $request->validate([
             'Qbank'   => 'mimes:docx'
         ]);
-
+        
         $question_type = $request->Post('QustionOptions');
         $question_category = $request->Post('CategoryName');
         // echo $question_options.'<br>';
@@ -69,49 +72,36 @@ class ImportQbankController extends Controller
 
                 $contentWord = $this->readDocx($filenameSave, $extension);
                 $xmlString = html_entity_decode($contentWord);
-                $xml = simplexml_load_string($xmlString) or die("Error: cannot create object");
+                return view('importSoal',compact('xmlString','question_type','question_category'));
                 
-                foreach ($xml->children() as $row) {
-                    $idQbanks = DB::table('qbanks')->max('id');
-
-                    $question   = $row->question;
-                    $option     = $row->options;
-
-                    if($row->paragraph != ''){
-                        $paragraph  = '<p>'.$row->paragraph.'</p>';
-                    }else{
-                        $paragraph  = $row->paragraph;
-                    }
-                    
-                    $insertQbanks = DB::table('qbanks')->insert([
-                        'id'            => $idQbanks+1,
-                        'question_type' => $question_type,
-                        'question'      => '<p>'.$question.'</p>',
-                        'inserted_by'   => Auth::user()->id,
-                        'paragraph'     => $paragraph,
-                        'id_category'   => $question_category
-                    ]);
-                    
-                    foreach($option as $rowoptions){
-                        $insertOptions = DB::table('options')->insert([
-                            'idq'       => $idQbanks+1,
-                            'answer'    => '<p>'.$rowoptions->answer.'</p>',
-                            'score'     => $rowoptions->score
-                        ]);
-                    }
-                }
-                
-                if($insertQbanks && $insertOptions){
-                    return back()
-                    ->with('message','File '.$filename.'.'.$extension.' has been uploaded.');
-                } else {
-                    return back()
-                    ->with('message','File '.$filename.'.'.$extension.' has been abort.');
-                }
-
             }catch(Exception $e){
                 return back()
                 ->with('message','File upload error '.$e);
+            }
+        }
+    }
+
+
+    public function saveSoal(Request $request){
+        $Qbanks=json_decode($request->post('json'));
+        $question_type = $request->Post('question_type');
+        $question_category = $request->Post('question_category');
+        
+        foreach($Qbanks as $row){
+            //dd($row->question);
+            $qbanks=Qbank::create([
+                'question_type' => $question_type,
+                'question'      => '<p>'.$row->question.'</p>',
+                'inserted_by'   => Auth::user()->id,
+                'paragraph'     => $row->paragraph,
+                'id_category'   => $question_category
+            ]);
+            foreach($row->options as $rowoptions){
+                $insertOptions = Option::create([
+                    'idq'       => $qbanks->id,
+                    'answer'    => '<p>'.$rowoptions->answer.'</p>',
+                    'score'     => $rowoptions->score
+                ]);
             }
         }
     }
