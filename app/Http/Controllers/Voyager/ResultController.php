@@ -15,8 +15,8 @@ use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Events\BreadImagesDeleted;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
-use App\Qbank;
 use App\Quis;
+use App\ResultUjian;
 
 class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseController
 {
@@ -226,26 +226,43 @@ class ResultController extends \TCG\Voyager\Http\Controllers\VoyagerBaseControll
     {
         $slug = $this->getSlug($request);
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-        $view = 'voyager::bread.read';
-        $res = DB::table('resultujians')->where('id',$id)->get();
+        // $view = 'voyager::bread.read';
+        // $res = DB::table('resultujians')->where('id',$id)->get();
+        // cek hasil ujian
+        $res = ResultUjian::findOrfail($id);
+        $quis = Quis::findOrFail($res->id_quis);
+        $arrayQuis = explode(',', $quis->id_questions);
+        // ambil soal
+        $soal=DB::table('qbanks')
+        ->join('options','options.idq','=','qbanks.id')
+        ->where('qbanks.id',$arrayQuis[0])
+        ->get();
 
-        foreach($res as $quis){
-            $quisDetails = DB::table('quiss')->where('id', $quis->id_quis)->get();
-            foreach($quisDetails as $result){
-                $countQuises = explode(',', $result->id_questions);
-                $arry = [
-                    'nama_quis'     => $result->quiz_name,
-                    'jumlah_quis'   => count($countQuises)
-                ];
-            }
-            $arry['total_times'] = $quis->total_time;
-        }
+        $nama_quis = $quis->quiz_name;
+        $total_time = $res->total_time;
+        
+
+        // foreach($res as $quis){
+        //     $quisDetails = DB::table('quiss')->where('id', $quis->id_quis)->get();
+        //     foreach($quisDetails as $result){
+        //         $countQuises = explode(',', $result->id_questions);
+        //         $arry = [
+        //             'nama_quis'     => $result->quiz_name,
+        //             'jumlah_quis'   => count($countQuises),
+        //         ];
+        //     }
+        //     $arry['total_times'] = $quis->total_time;
+        // }
         
         if (view()->exists("voyager::$slug.read")) {
             $view = "voyager::$slug.read";
         }
 
-        return Voyager::view($view, $arry);
+        return Voyager::view($view, compact(
+            'arrayQuis',
+            'nama_quis',
+            'total_time'
+        ));
     }
 
     //***************************************
