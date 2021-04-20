@@ -56,13 +56,17 @@
                     dataType:"json",
                     data:{"json":JSON.stringify(dataQbanks),"question_type":{{ $question_type }},"question_category":{{ $question_category }} },
                     success:function(result){
-                        console.log("succes");
+                        if(result==1){
+                            window.location.href="{{url('/tryout/qbanks')}}";
+                        }else{
+                            alert('Failed Add Question Banks');
+                            window.location.href="{{url('/tryout/qbanks')}}";
+                        }
                     }
                 });
             }
             var xmlData=getHtml();
             parseHtmlToXml(xmlData);
-            console.log(dataQbanks);    
             sendArrayQbanks(dataQbanks);
         </script>
 </html>

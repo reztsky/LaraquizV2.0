@@ -88,7 +88,6 @@ class ImportQbankController extends Controller
         $question_category = $request->Post('question_category');
         
         foreach($Qbanks as $row){
-            //dd($row->question);
             $qbanks=Qbank::create([
                 'question_type' => $question_type,
                 'question'      => '<p>'.$row->question.'</p>',
@@ -104,12 +103,18 @@ class ImportQbankController extends Controller
                 ]);
             }
         }
+
+        if($qbanks&&$insertOptions){
+            echo "1";
+        }else{
+            echo "0";
+        }
     }
 
     public function readDocx($fileName, $extn)
     {
         if($extn == "docx"){
-            $source = storage_path('app\public\QbankFile/'.$fileName);
+            $source = storage_path(url('storage/QbankFile').$fileName);
             $objReader = IOFactory::createReader('Word2007');
             $phpWord = $objReader->load($source);
             $body = '';
