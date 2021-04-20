@@ -105,19 +105,22 @@ class ImportQbankController extends Controller
         }
 
         if($qbanks&&$insertOptions){
-            echo "1";
+            return  "1";
         }else{
-            echo "0";
+            return "0";
         }
     }
 
     public function readDocx($fileName, $extn)
     {
         if($extn == "docx"){
-            $source = storage_path('app\public\QbankFile\\'.$fileName);
+            $source = storage_path('app/public/QbankFile/'.$fileName);
+            //$source =Storage::url('QbankFile/'.$fileName);
+            //dd($source);
+            //dd(Storage::url('QbankFile/'.$fileName));
             
-            dd($source);
-            
+            //$source='storage\\app\\public\\QbankFile\\'.$fileName;
+            //dd($source);
             $objReader = IOFactory::createReader('Word2007');
             $phpWord = $objReader->load($source);
             $body = '';
