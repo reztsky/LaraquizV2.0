@@ -116,7 +116,7 @@ class ImportQbankController extends Controller
         if($extn == "docx"){
             $source = storage_path('app\public\QbankFile\\'.$fileName);
             
-            //dd($source);
+            dd($source);
             
             $objReader = IOFactory::createReader('Word2007');
             $phpWord = $objReader->load($source);
