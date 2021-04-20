@@ -120,7 +120,7 @@ class ImportQbankController extends Controller
             //dd(Storage::url('QbankFile/'.$fileName));
             
             //$source='storage\\app\\public\\QbankFile\\'.$fileName;
-            dd($source);
+            //dd($source);
             $objReader = IOFactory::createReader('Word2007');
             $phpWord = $objReader->load($source);
             $body = '';
